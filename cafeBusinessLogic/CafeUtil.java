@@ -26,12 +26,38 @@ class CafeUtil {
     }
 
     public ArrayList<String> addCustomer(ArrayList<String> customers){
-        System.out.println("Please enter your name:");
-        String userName = System.console().readLine();
-        System.out.println("Hello " + userName + " there are " + customers.size() + " customers in front of you.");
-        customers.add(userName);
-        System.out.println(customers);
+        boolean exit = false;
+        while(exit == false){
+            System.out.println("Enter customer name or press \"q\" to finalize");
+            String userName = System.console().readLine();
+            if(userName.equals("q")){
+                exit = true;
+                break;
+            }
+            System.out.println("Hello " + userName + " there are " + customers.size() + " customers in front of you.");
+            customers.add(userName);
+            System.out.println(customers);
+        }
         return customers;
+    }
+
+    public void printPriceCharc(String product, double price, int maxQuantity){
+        System.out.println(product);
+        double priceMult = 0;
+        for(int i = 1; i <= maxQuantity; i++){
+            priceMult = i * price - (i * .50);
+            System.out.printf(i + " -- " + "$%.2f%n", priceMult);
+        }
+    }
+
+    public boolean displayMenu(ArrayList<String> menuItems, ArrayList<Double> prices){
+        if(menuItems.size() != prices.size()){
+            return false;
+        }
+        for(int i = 0; i < menuItems.size(); i++){
+            System.out.printf(i + " " + menuItems.get(i) + " -- $%.2f%n", prices.get(i));
+        }
+        return true;
     }
 
 }

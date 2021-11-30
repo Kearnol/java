@@ -25,15 +25,26 @@ public class TestCafe {
             "mocha"
         );
         ArrayList<String> menu = new ArrayList<String>();
+        ArrayList<Double> price = new ArrayList<Double>();
         menu.addAll(loadMenu);
+        price.add(1.99);   
+        price.add(2.99);   
+        price.add(3.99);   
+        price.add(4.99);
+
         appTest.displayMenu(menu);
+        appTest.displayMenu(menu, price);
     
+
+
+        System.out.println("\n----- Print Price Chart Test-----");
+            appTest.printPriceCharc("grapes", 2.22, 5);
+
         System.out.println("\n----- Add Customer Test-----");
         ArrayList<String> customers = new ArrayList<String>();
         // --- Test 4 times ---
-        for (int i = 0; i < 4; i++) {
             appTest.addCustomer(customers);
             System.out.println("\n");
-        }
+        
     }
 }
