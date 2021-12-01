@@ -25,8 +25,6 @@ public class BankAccount{
         String acctNum = "";
         for(int i = 0; i<10; i++){
             int digit = (int) Math.rint(Math.random()*10);
-            
-            System.out.println(digit);
             acctNum += digit;
         }
         return acctNum;
@@ -65,7 +63,7 @@ public class BankAccount{
         else{
             savingsBalance -= withdraw;
             allBalances -= withdraw;
-            System.out.printf("Withrdew $%.2f. New Account Balance: $%2$d", withdraw, savingsBalance);
+            System.out.printf("Withrdew $%.2f. New Account Balance: $%2$.2f", withdraw, savingsBalance);
         }
         return this;
     }
