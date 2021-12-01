@@ -51,6 +51,7 @@ public class BankAccount{
         }
         else{
             checkingBalance -= withdraw;
+            allBalances -= withdraw;
             System.out.printf("Withrdew $%.2f. New Account Balance: $%2$d", withdraw, checkingBalance);
         }
         return this;
@@ -63,6 +64,7 @@ public class BankAccount{
         }
         else{
             savingsBalance -= withdraw;
+            allBalances -= withdraw;
             System.out.printf("Withrdew $%.2f. New Account Balance: $%2$d", withdraw, savingsBalance);
         }
         return this;
